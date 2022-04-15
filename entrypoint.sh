@@ -24,3 +24,4 @@ ssh \
   echo "Running playbook..."
   echo $PASS > ./_vault_pass
   ansible-playbook -i hosts --vault-password-file ./_vault_pass $PLAYBOOK --tags $TAGS
+'
