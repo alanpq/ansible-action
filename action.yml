@@ -1,0 +1,42 @@
+name: 'Ansible playbook runner via SSH'
+description: 'Run ansible playbooks on a remote server'
+author: 'Alan Panayotov'
+inputs:
+  playbook:
+    description: Playbook
+    default: main.yml
+  host:
+    description: Host to SSH into and run playbooks from.
+    required: true
+  port:
+    description: SSH port
+    default: 22
+  user:
+    description: User on host
+    required: true
+  ssh_key:
+    description: SSH key to use.
+    required: true
+  directory:
+    description: Directory on host where playbooks are located.
+    required: true
+  vault_pass:
+    description: Vault password.
+    required: true
+  tags:
+    description: Tags to pass to `ansible-playbook`
+    default: ''
+
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{inputs.host}}
+    - ${{inputs.port}}
+    - ${{inputs.user}}
+    - ${{inputs.ssh_key}}
+    - ${{inputs.directory}}
+    - ${{inputs.vault_pass}}
+    - ${{inputs.playbook}}
+    - ${{inputs.tags}}
