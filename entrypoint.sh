@@ -23,7 +23,7 @@ ssh \
 
 	if [[ \"$(git pull)\" != *\"Already up to date.\"* ]]; then
 		echo 'Updated repo, cloning...'
-		virtualenv -p /usr/bin/python3 .
+		virtualenv -p /usr/local/bin/python3.10 .
 		source bin/activate
 		pip3 install -r ./requirements.txt
 		ansible-galaxy install -r requirements.yml
