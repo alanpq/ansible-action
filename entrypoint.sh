@@ -25,7 +25,7 @@ ssh \
 		echo "Updated repo, cloning..."
 		virtualenv -p /usr/bin/python3 .
 		source bin/activate
-		pip install -r ./requirements.txt
+		pip3 install -r ./requirements.txt
 		ansible-galaxy install -r requirements.yml
 	fi
 	
