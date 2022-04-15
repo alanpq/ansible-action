@@ -21,7 +21,7 @@ ssh \
 	cd $DIR
 	pwd
 
-	if [[ \"$(git pull)\" != *\"Already up to date.\"* ]]; then
+	if [[ '\$(git pull)' != *\"Already up to date.\"* ]]; then
 		echo 'Updated repo, cloning...'
 		python3.10 -m venv .
 		source bin/activate
