@@ -30,6 +30,6 @@ ssh \
 	fi
 	
 	echo 'Running playbook...'
-	echo $VAULT > ./_vault_pass
-	ansible-playbook -i hosts --vault-password-file ./_vault_pass $PLAYBOOK --tags $TAGS
+	echo '$VAULT' > ./_vault_pass
+	ansible-playbook -i hosts --vault-password-file ./_vault_pass '$PLAYBOOK' --tags '$TAGS'
 "
