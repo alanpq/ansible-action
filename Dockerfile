@@ -6,4 +6,4 @@ COPY entrypoint.sh /entrypoint.sh
 
 WORKDIR /app
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
