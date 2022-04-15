@@ -7,9 +7,7 @@ chmod 600 id_rsa
 echo "SSHing into host..."
 
 ssh \
-  -o StrictHostKeyChecking=no -o GlobalKnownHostsFile=/dev/null -o UserKnownHostsFIle=/dev/null \
-  -i id_rsa -p $2 $3@$1 \
-  DIR=$5 VAULT_PASS=$6 PASS=$6 PLAYBOOK=$7 TAGS=$8 '
+  -o StrictHostKeyChecking=no -o GlobalKnownHostsFile=/dev/null -o UserKnownHostsFIle=/dev/null -i id_rsa -p $2 $3@$1 DIR=$5 VAULT_PASS=$6 PASS=$6 PLAYBOOK=$7 TAGS=$8 '
 	echo "Connected to host."
 	cd $DIR
 	pwd
